@@ -24,7 +24,7 @@ void PatternTrackingInfo::computePose(const Pattern& pattern, const CameraCalibr
   taux.convertTo(Tvec ,CV_32F);
 
   cv::Mat_<float> rotMat(3,3); 
-  cv::Rodrigues(Rvec, rotMat);
+  cv::Rodrigues(Rvec, rotMat); //MD: converts between Rotation matrix and Rotation vector or vice versa
 
   // Copy to transformation matrix
   for (int col=0; col<3; col++)

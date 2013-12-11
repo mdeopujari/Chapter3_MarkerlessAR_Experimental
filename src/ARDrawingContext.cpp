@@ -143,7 +143,15 @@ void ARDrawingContext::drawAugmentedScene()
     // Set the pattern transformation
     Matrix44 glMatrix = patternPose.getMat44();
     glLoadMatrixf(reinterpret_cast<const GLfloat*>(&glMatrix.data[0]));
+	
+	for (int row=0;row<=3;row++)
+	{
+		for (int col=0;col<=3;col++)
+			std::cout<<glMatrix.mat[row][col]<<" ";
+		std::cout<<std::endl;
 
+	}
+	std::cout<<std::endl;
     // Render model
     drawCoordinateAxis();
     drawCubeModel();
